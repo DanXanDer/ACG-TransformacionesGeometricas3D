@@ -30,7 +30,6 @@ body {
   position: absolute;
   top: 10rem;
   left: 10rem;
-  /*transform: rotate(-90deg);*/
   transform-style: preserve-3d;
   transition: all 0.2s;
 }
@@ -78,4 +77,4 @@ body {
 
 .botones div {
   display: none;
-}/*# sourceMappingURL=styletrans.css.map */
+}
