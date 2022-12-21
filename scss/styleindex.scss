@@ -1,0 +1,142 @@
+$color-blanco : #fff;
+$color-azul : rgb(40, 113, 197);
+$color-negro : black;
+$color-azul-oscuro: #232d39;
+
+$poppins-font : 'Poppins',
+sans-serif;
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+a {
+    &:link {
+        color: $color-blanco
+    }
+
+    &:visited {
+        color: $color-blanco;
+    }
+}
+
+
+html {
+    font-size: 62.5%;
+}
+
+@mixin buttonDetails($color-button) {
+    padding: 2rem 6rem 2rem 6rem;
+    border-radius: 6rem;
+    background-color: $color-button;
+    transition: all 0.2s;
+    font-size: 2.2rem;
+}
+
+
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.hero-text {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    text-align: center;
+    font-style: $poppins-font;
+
+    a {
+        @include buttonDetails($color-azul);
+        align-self: center;
+        animation: moveInBottom 1s ease-out;
+
+        &:hover {
+            transform: translateY(-0.7rem);
+            box-shadow: -1px 8px 19px -5px rgba(0, 0, 0, 0.75);
+            -webkit-box-shadow: -1px 8px 19px -5px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: -1px 8px 19px -5px rgba(0, 0, 0, 0.75);
+        }
+
+        &:active {
+            transform: translateY(0rem);
+        }
+    }
+
+
+}
+
+.hero-grupo {
+    font-size: 2rem;
+    color: $color-blanco;
+    font-weight: bold;
+}
+
+.hero-curso {
+    font-size: 7rem;
+    font-weight: bolder;
+
+    div:first-child {
+        color: $color-blanco;
+        animation: moveInLeft 1s ease-out;
+    }
+
+    div:last-child {
+        color: $color-azul;
+        animation: moveInRight 1s ease-out;
+    }
+
+}
+
+@keyframes moveInLeft {
+    0%{
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+    80%{
+        opacity: 0.5;
+        transform: translateX(2rem);
+    }
+}
+
+@keyframes moveInRight {
+    0%{
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+    80%{
+        opacity: 0.5;
+        transform: translateX(-2rem);
+    }
+}
+
+@keyframes moveInBottom {
+    0%{
+        opacity: 0;
+        transform: translateY(10rem);
+    }
+    80%{
+        opacity: 0.5;
+        transform: translateY(0rem);
+    }
+}

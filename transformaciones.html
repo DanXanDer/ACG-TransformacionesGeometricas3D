@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="scss/styletrans.css">
+    <title>Transformaciones 3D</title>
+</head>
+
+<body>
+    <div class="botones">
+        <select name="transformacion" id="transformacion">
+            <option value="seleccionar">Seleccione su opcion</option>
+            <option value="rotacion">Rotación</option>
+            <option value="traslacion">Traslación</option>
+            <option value="escala">Escalación</option>
+        </select>
+        <div class="botones-direcciones">
+            <button class="arriba">Arriba</button>
+            <button class="izquierda">Izquierda</button>
+            <button class="derecha">Derecha</button>
+            <button class="abajo">Abajo</button>
+        </div>
+        <div class="input-coordenadas">
+            <input class="coordenadaX" type="text" placeholder="Coordenada X">
+            <input class="coordenadaY" type="text" placeholder="Coordenada Y">
+            <input class="coordenadaZ" type="text" placeholder="Coordenada Z">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="box">
+
+            <div class="card front">Front</div>
+            <div class="card back">Back</div>
+            <div class="card left">Left</div>
+            <div class="card right">Right</div>
+            <div class="card top">Top</div>
+            <div class="card bottom">Bottom</div>
+
+        </div>
+    </div>
+    <script src="js/transformaciones.js"></script>
+</body>
+
+</html>
