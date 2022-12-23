@@ -12,14 +12,27 @@ body {
   height: 100vh;
   background-color: #232d39;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: space-around;
 }
 
-.container {
+.titulo {
+  position: absolute;
+  left: 50%;
+  color: white;
+  top: 3%;
+  transform: translateX(-50%);
+  box-shadow: 0px 12px 35px 0px rgba(0, 0, 0, 0.86);
+  -webkit-box-shadow: 0px 12px 35px 0px rgba(0, 0, 0, 0.86);
+  -moz-box-shadow: 0px 12px 35px 0px rgba(0, 0, 0, 0.86);
+  padding: 2rem 7rem 2rem 7rem;
+  border-radius: 5rem;
+}
+
+.contenedor {
   height: 60vh;
   width: 30vw;
+  top: 17rem;
   position: relative;
   perspective: 100rem;
 }
@@ -28,23 +41,29 @@ body {
   height: 25rem;
   width: 25rem;
   position: absolute;
-  top: 10rem;
   left: 10rem;
+  /*transform: rotate(-90deg);*/
   transform-style: preserve-3d;
   transition: all 0.2s;
+  box-shadow: 0px 12px 35px 0px rgba(0, 0, 0, 0.86);
+  -webkit-box-shadow: 0px 12px 35px 0px rgba(0, 0, 0, 0.86);
+  -moz-box-shadow: 0px 12px 35px 0px rgba(0, 0, 0, 0.86);
 }
 
-.card {
+.cara {
   height: 25rem;
   width: 25rem;
   text-align: center;
   padding: 10rem 0rem;
   color: white;
   background-color: black;
-  border: 0.2rem solid white;
+  border: 0.2rem solid rgb(189, 50, 50);
   font-size: 3.2rem;
   box-sizing: border-box;
   position: absolute;
+  box-shadow: 0px 12px 35px 0px rgba(0, 0, 0, 0.86);
+  -webkit-box-shadow: 0px 12px 35px 0px rgba(0, 0, 0, 0.86);
+  -moz-box-shadow: 0px 12px 35px 0px rgba(0, 0, 0, 0.86);
 }
 
 .front {
@@ -75,6 +94,210 @@ body {
   transform: rotateX(-90deg);
 }
 
-.botones div {
-  display: none;
+.botones {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6rem;
 }
+
+.botones-direcciones {
+  display: grid;
+  padding: 5rem;
+  border-radius: 5rem;
+  height: 30rem;
+  width: 30rem;
+  grid-template: 1fr 1fr 1fr/1fr 1fr 1fr;
+  grid-template-areas: "nada1 arriba nada2" "izquierda centro derecha" "nada4 abajo nada5";
+  box-shadow: 0px 12px 35px 0px rgba(0, 0, 0, 0.86);
+  -webkit-box-shadow: 0px 12px 35px 0px rgba(0, 0, 0, 0.86);
+  -moz-box-shadow: 0px 12px 35px 0px rgba(0, 0, 0, 0.86);
+}
+.botones-direcciones button {
+  border: none;
+  font-size: 2.5rem;
+  background-color: gray;
+  color: rgb(73, 5, 5);
+}
+
+.botones-escala {
+  display: flex;
+  box-sizing: border-box;
+}
+.botones-escala button {
+  border: none;
+  font-size: 2.5rem;
+  background-color: gray;
+  color: rgb(73, 5, 5);
+  padding: 2rem 6rem 2rem 6rem;
+  font-size: 4rem;
+}
+.botones-escala button:first-child {
+  border-top-left-radius: 6rem;
+  border-bottom-left-radius: 6rem;
+}
+.botones-escala button:last-child {
+  border-top-right-radius: 6rem;
+  border-bottom-right-radius: 6rem;
+}
+.botones-escala button:hover {
+  transition: all 0.3s;
+  box-shadow: 0px 12px 35px 0px rgba(232, 223, 223, 0.86);
+  -webkit-box-shadow: 0px 12px 35px 0px rgba(238, 228, 228, 0.86);
+  -moz-box-shadow: 0px 12px 35px 0px rgba(244, 234, 234, 0.86);
+  transform: translateY(-1rem);
+}
+.botones-escala button:active {
+  transform: translateY(0.5rem);
+}
+
+.centro {
+  grid-area: centro;
+}
+
+.arriba {
+  grid-area: arriba;
+  border-top-left-radius: 3rem;
+  border-top-right-radius: 3rem;
+}
+
+.arriba:hover {
+  transform: translateY(-0.5rem);
+  transition: all 0.3s;
+  box-shadow: 0px 12px 35px 0px rgba(232, 223, 223, 0.86);
+  -webkit-box-shadow: 0px 12px 35px 0px rgba(238, 228, 228, 0.86);
+  -moz-box-shadow: 0px 12px 35px 0px rgba(244, 234, 234, 0.86);
+}
+
+.arriba:active {
+  transform: translateY(0.5rem);
+}
+
+.derecha {
+  grid-area: derecha;
+  transform: rotate(90deg);
+  border-top-left-radius: 3rem;
+  border-top-right-radius: 3rem;
+}
+
+.derecha:hover {
+  transform: rotate(90deg) translateX(0.5rem);
+  transition: all 0.3s;
+  box-shadow: 0px 12px 35px 0px rgba(232, 223, 223, 0.86);
+  -webkit-box-shadow: 0px 12px 35px 0px rgba(238, 228, 228, 0.86);
+  -moz-box-shadow: 0px 12px 35px 0px rgba(244, 234, 234, 0.86);
+}
+
+.derecha:active {
+  transform: rotate(90deg) translateX(-0.5rem);
+}
+
+.izquierda {
+  grid-area: izquierda;
+  transform: rotate(-90deg);
+  border-top-left-radius: 3rem;
+  border-top-right-radius: 3rem;
+}
+
+.izquierda:hover {
+  transform: rotate(-90deg) translateX(-0.5rem);
+  transition: all 0.3s;
+  box-shadow: 0px 12px 35px 0px rgba(232, 223, 223, 0.86);
+  -webkit-box-shadow: 0px 12px 35px 0px rgba(238, 228, 228, 0.86);
+  -moz-box-shadow: 0px 12px 35px 0px rgba(244, 234, 234, 0.86);
+}
+
+.izquierda:active {
+  transform: rotate(-90deg) translateX(0.5rem);
+}
+
+.abajo {
+  grid-area: abajo;
+  transform: rotate(180deg);
+  border-top-left-radius: 3rem;
+  border-top-right-radius: 3rem;
+}
+
+.abajo:hover {
+  transform: rotate(180deg) translateY(0.5rem);
+  transition: all 0.3s;
+  box-shadow: 0px 12px 35px 0px rgba(232, 223, 223, 0.86);
+  -webkit-box-shadow: 0px 12px 35px 0px rgba(238, 228, 228, 0.86);
+  -moz-box-shadow: 0px 12px 35px 0px rgba(244, 234, 234, 0.86);
+}
+
+.abajo:active {
+  transform: rotate(180deg) translateY(-0.5rem);
+}
+
+#transformacion {
+  border-color: rgb(73, 5, 5);
+  display: inline-block;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1rem;
+  border-radius: 2rem;
+  width: 40rem;
+  background-color: black;
+  color: white;
+}
+
+.botones-escala {
+  box-sizing: border-box;
+  box-shadow: 0px 12px 35px 0px rgba(0, 0, 0, 0.86);
+  -webkit-box-shadow: 0px 12px 35px 0px rgba(0, 0, 0, 0.86);
+  -moz-box-shadow: 0px 12px 35px 0px rgba(0, 0, 0, 0.86);
+  padding: 5rem;
+  border-radius: 5rem;
+}
+
+.input-coordenadas {
+  display: grid;
+  gap: 1rem;
+  grid-template: 1fr 1fr/1fr 1fr 1fr 1fr;
+  grid-template-areas: "coordenadaX coordenadaX coordenadaY coordenadaY" "nada coordenadaZ coordenadaZ nada2";
+  box-shadow: 0px 12px 35px 0px rgba(0, 0, 0, 0.86);
+  -webkit-box-shadow: 0px 12px 35px 0px rgba(0, 0, 0, 0.86);
+  -moz-box-shadow: 0px 12px 35px 0px rgba(0, 0, 0, 0.86);
+  padding: 5rem;
+  border-radius: 4rem;
+}
+.input-coordenadas input,
+.input-coordenadas span {
+  height: 4rem;
+  border-color: rgb(73, 5, 5);
+  font-size: 1.3rem;
+}
+.input-coordenadas input {
+  background-color: gray;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+.input-coordenadas span {
+  background-color: black;
+  color: white;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  padding: 2rem;
+}
+
+.coordenadaX {
+  grid-area: coordenadaX;
+}
+
+.coordenadaY {
+  grid-area: coordenadaY;
+}
+
+.coordenadaZ {
+  grid-area: coordenadaZ;
+}
+
+.boton-presionado {
+  transform: translateY(1rem);
+  transition: all 0.3s;
+  box-shadow: 0px 12px 35px 0px rgba(232, 223, 223, 0.86);
+  -webkit-box-shadow: 0px 12px 35px 0px rgba(238, 228, 228, 0.86);
+  -moz-box-shadow: 0px 12px 35px 0px rgba(244, 234, 234, 0.86);
+}/*# sourceMappingURL=styletrans.css.map */
