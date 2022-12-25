@@ -1,15 +1,23 @@
 $color-blanco : #fff;
 $color-azul : rgb(40, 113, 197);
 $color-negro : black;
-$color-azul-oscuro: #232d39;
+$color-azul-oscuro: #3f47ba;
+$font: 'Roboto', sans-serif;
+
 
 $poppins-font : 'Poppins',
 sans-serif;
 
 
 body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
     margin: 0;
     padding: 0;
+    font-family: $font;
 }
 
 * {
@@ -67,7 +75,7 @@ html {
     font-style: $poppins-font;
 
     a {
-        @include buttonDetails($color-azul);
+        @include buttonDetails($color-azul-oscuro);
         align-self: center;
         animation: moveInBottom 1s ease-out;
 
@@ -102,41 +110,153 @@ html {
     }
 
     div:last-child {
-        color: $color-azul;
+        color: $color-azul-oscuro;
         animation: moveInRight 1s ease-out;
     }
 
 }
 
 @keyframes moveInLeft {
-    0%{
+    0% {
         opacity: 0;
         transform: translateX(-10rem);
     }
-    80%{
+
+    80% {
         opacity: 0.5;
         transform: translateX(2rem);
     }
 }
 
 @keyframes moveInRight {
-    0%{
+    0% {
         opacity: 0;
         transform: translateX(10rem);
     }
-    80%{
+
+    80% {
         opacity: 0.5;
         transform: translateX(-2rem);
     }
 }
 
 @keyframes moveInBottom {
-    0%{
+    0% {
         opacity: 0;
         transform: translateY(10rem);
     }
-    80%{
+
+    80% {
         opacity: 0.5;
         transform: translateY(0rem);
     }
+}
+
+.integrantes {
+    .text {
+        font-size: 3.5rem;
+        text-align: center;
+        margin-bottom: 5rem;
+
+        span:last-child {
+            color: $color-azul-oscuro;
+        }
+    }
+
+}
+
+.fotos {
+    margin: 10rem auto;
+    height: 80rem;
+    width: 120rem;
+    display: grid;
+    gap: 5rem;
+    grid-template: repeat(2, 1fr) / repeat(9, 1fr);
+    grid-template-areas: "danee danee danee daniel daniel daniel milagros milagros milagros"
+        "nada1 mabel mabel mabel nada2 sandro sandro sandro nada3";
+
+
+    .container-integrante {
+        box-shadow: 0px 12px 35px 0px rgba(0, 0, 0, 0.86);
+        -webkit-box-shadow: 0px 12px 35px 0px rgba(0, 0, 0, 0.86);
+        -moz-box-shadow: 0px 12px 35px 0px rgba(0, 0, 0, 0.86);
+        border-radius: 2rem;
+        
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+
+        .img {
+            height: 70%;
+            width: 80%;
+        }
+
+        .datos {
+            height: 15%;
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+
+            div {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    .danee {
+        grid-area: danee;
+
+        .img {
+            background-image: url(../img/danee.jpeg);
+            background-size: cover;
+        }
+    }
+
+    .daniel {
+        grid-area: daniel;
+
+        .img {
+            background-image: url(../img/daniel.jpg);
+            background-size: cover;
+        }
+    }
+
+    .milagros {
+        grid-area: milagros;
+
+        .img {
+            background-image: url(../img/milagros.jpg);
+            background-size: cover;
+        }
+    }
+
+    .mabel {
+        grid-area: mabel;
+
+        .img {
+            background-image: url(../img/mabel.jpg);
+            background-size: cover;
+        }
+    }
+
+    .sandro {
+        grid-area: sandro;
+
+        .img {
+            background-image: url(../img/sandro.jpg);
+            background-position-x: -4rem;
+            background-size: cover;
+        }
+    }
+
+}
+
+.apellidos {
+    color: $color-azul-oscuro;
 }

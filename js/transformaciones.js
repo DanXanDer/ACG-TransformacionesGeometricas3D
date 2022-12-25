@@ -28,7 +28,7 @@ transformacion.addEventListener('change', obtenerOpcion);
 
 function obtenerOpcion(e) {
     opcionTransformacion = this.value;
-    if (transformacion.value === 'seleccionar') {
+    if (opcionTransformacion === 'seleccionar') {
         botonesDirContainer.style.display = 'none';
         botonesCoorContainer.style.display = 'none';
         inputCoorContainer.style.display = 'none';

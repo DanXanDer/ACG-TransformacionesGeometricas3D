@@ -1,6 +1,12 @@
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
   margin: 0;
   padding: 0;
+  font-family: "Roboto", sans-serif;
 }
 
 * {
@@ -47,7 +53,7 @@ html {
 .hero-text a {
   padding: 2rem 6rem 2rem 6rem;
   border-radius: 6rem;
-  background-color: rgb(40, 113, 197);
+  background-color: #3f47ba;
   transition: all 0.2s;
   font-size: 2.2rem;
   align-self: center;
@@ -80,7 +86,7 @@ html {
           animation: moveInLeft 1s ease-out;
 }
 .hero-curso div:last-child {
-  color: rgb(40, 113, 197);
+  color: #3f47ba;
   -webkit-animation: moveInRight 1s ease-out;
           animation: moveInRight 1s ease-out;
 }
@@ -145,4 +151,90 @@ html {
     opacity: 0.5;
     transform: translateY(0rem);
   }
+}
+.integrantes .text {
+  font-size: 3.5rem;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+.integrantes .text span:last-child {
+  color: #3f47ba;
+}
+
+.fotos {
+  margin: 10rem auto;
+  height: 80rem;
+  width: 120rem;
+  display: grid;
+  gap: 5rem;
+  grid-template: repeat(2, 1fr)/repeat(9, 1fr);
+  grid-template-areas: "danee danee danee daniel daniel daniel milagros milagros milagros" "nada1 mabel mabel mabel nada2 sandro sandro sandro nada3";
+}
+.fotos .container-integrante {
+  box-shadow: 0px 12px 35px 0px rgba(0, 0, 0, 0.86);
+  -webkit-box-shadow: 0px 12px 35px 0px rgba(0, 0, 0, 0.86);
+  -moz-box-shadow: 0px 12px 35px 0px rgba(0, 0, 0, 0.86);
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+.fotos .container-integrante .img {
+  height: 70%;
+  width: 80%;
+}
+.fotos .container-integrante .datos {
+  height: 15%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.fotos .container-integrante .datos div {
+  font-size: 1.5rem;
+}
+.fotos .danee {
+  grid-area: danee;
+}
+.fotos .danee .img {
+  background-image: url(../img/danee.jpeg);
+  background-size: cover;
+}
+.fotos .daniel {
+  grid-area: daniel;
+}
+.fotos .daniel .img {
+  background-image: url(../img/daniel.jpg);
+  background-size: cover;
+}
+.fotos .milagros {
+  grid-area: milagros;
+}
+.fotos .milagros .img {
+  background-image: url(../img/milagros.jpg);
+  background-size: cover;
+}
+.fotos .mabel {
+  grid-area: mabel;
+}
+.fotos .mabel .img {
+  background-image: url(../img/mabel.jpg);
+  background-size: cover;
+}
+.fotos .sandro {
+  grid-area: sandro;
+}
+.fotos .sandro .img {
+  background-image: url(../img/sandro.jpg);
+  background-position-x: -4rem;
+  background-size: cover;
+}
+
+.apellidos {
+  color: #3f47ba;
 }/*# sourceMappingURL=styleindex.css.map */
